@@ -1,7 +1,9 @@
 import random
-def invokeApi(request_url, payload):
+import requests
+def invokeApi(payload):
     try:
-        print(request_url, params)
+        request_url = "http://localhost:6000/generate/ticket?"
+        # print(request_url, payload)
         headers = {
             'Content-Type': 'application/json',
             'User-Agent': 'data creator python'
@@ -17,7 +19,7 @@ def invokeApi(request_url, payload):
         return {}
 
 
-url = "http://localhost:5000/generate/ticket?"
+
 
 data = {
     "customerName": ["karun", "Sophia","Liam","Olivia","Noah","Jackson","Emma","Amelia","Caden","Mia","Mateo","Layla", "Muhammad", "Zoe", "Mason"],
@@ -28,8 +30,14 @@ data = {
 }
 
 
-userlist = []
-for i in data:
-    rand = random.randrange(1, len(data[i])))
-    newdata[i] = data[i][rand]
-    userlist.append()
+# userlist = []
+for j in range(50):
+    newdata = dict()
+    for i in data:
+        rand = random.randrange(1, len(data[i]))
+        newdata[i] = data[i][rand]
+
+    invokeApi(newdata)
+    # userlist.append(newdata)
+
+# print(userlist)

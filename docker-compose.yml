@@ -11,10 +11,10 @@ services:
       - db
     ports:
       - "5000:1234"
-  # nginx:
-  #   build: nginx
-  #   image: mynginx:latest
-  #   depends_on:
-  #     - backend
-  #   ports:
-  #     - "4000:4000"
+  nginx:
+    build: nginx
+    image: mynginx:latest
+    depends_on:
+      - backend
+    ports:
+      - "6000:4000"
