@@ -71,7 +71,7 @@ const validate = async (req, username, password, resp) => {
     console.log("authenticating...")
     const isValid = await Bcrypt.compare(username+password, user.password);
     console.log("authenticated... isValid user",isValid)
-    let x_access_tocken = req.headers.x_access_tocken
+    let x_access_tocken = req.headers.xaccesstocken
     console.log(x_access_tocken)
     console.log("checking authorization...")
     const isAuthorized = await Bcrypt.compare(user.username+user.role,x_access_tocken);

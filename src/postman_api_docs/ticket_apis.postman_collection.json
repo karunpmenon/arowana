@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "7c5e4b59-6237-4f70-ae9c-84178fe9a320",
+		"name": "ticket_apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "deletewithFilter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ticketPrice\":100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/deletewithFilter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"deletewithFilter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getalldocs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/getalldocs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"getalldocs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate/ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerName\":\"karun\",\n    \"performanceTitle\": \"summer in bethlehem\",\n    \"performanceTime\":\"2021-01-12\",\n    \"ticketPrice\":180\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/generate/ticket?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"generate",
+						"ticket"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "finddocs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerName\":\"karun\",\n    \"performanceTitle\": \"conjuring\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/finddocs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"finddocs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookingscount in each month",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/get/bookingscount?toDate=2021-10-01&fromDate=2020-01-01&performanceTitle=conjuring&theater=theater1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"get",
+						"bookingscount"
+					],
+					"query": [
+						{
+							"key": "toDate",
+							"value": "2021-10-01"
+						},
+						{
+							"key": null,
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "fromDate",
+							"value": "2020-01-01"
+						},
+						{
+							"key": null,
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "performanceTitle",
+							"value": "conjuring"
+						},
+						{
+							"key": null,
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "theater",
+							"value": "theater1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "totalamount via booking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/get/totalamount?toDate=2021-10-01&fromDate=2020-01-01&performanceTitle=conjuring&theater=theater1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"get",
+						"totalamount"
+					],
+					"query": [
+						{
+							"key": "toDate",
+							"value": "2021-10-01"
+						},
+						{
+							"key": "fromDate",
+							"value": "2020-01-01"
+						},
+						{
+							"key": "performanceTitle",
+							"value": "conjuring"
+						},
+						{
+							"key": "theater",
+							"value": "theater1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update field with filter API",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerName\":\"karun\",\n    \"performanceTitle\": \"conjuring\",\n    \"updateField\":\"customerName\",\n    \"updateValue\":\"karunupdated\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/updatewithFilter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"updatewithFilter"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

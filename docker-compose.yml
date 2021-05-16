@@ -9,8 +9,8 @@ services:
     image: backend:1.0.0
     depends_on:
       - db
-    ports:
-      - "5000:1234"
+    # ports:
+    #   - "5000:1234"
   nginx:
     build: nginx
     image: mynginx:latest
