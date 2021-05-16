@@ -1,0 +1,205 @@
+swagger: '2.0'
+host: 'localhost:1234'
+basePath: /
+schemes:
+  - http
+info:
+  title: Theater ticket API Documentation
+  version: 0.0.1
+  contact:
+    name: Karun
+    email: karunpmenon@gmail.com
+paths:
+  /deletewithFilter:
+    delete:
+      summary: delete docs based on customerName
+      operationId: deletewithfilter
+      description: delete docs based on filter
+      parameters:
+        - name: customerName
+          in: body
+          description: name of the customer to be deleted
+          schema:
+            type: string
+          required: true
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /finddocs:
+    post:
+      summary: find docs based on filter
+      operationId: postFinddocs
+      description: find docs based on filter
+      parameters:
+      - in: body
+        name: body
+        description: find docs based on filter
+        schema:
+          type: object
+          required:
+            - theater
+          properties:
+            customerName:
+              type: string
+            performanceTitle:
+              type: string
+            ticketPrice:
+              type: number
+            performanceTime:
+              type: string
+            theater:
+              type: string
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /generate/ticket:
+    post:
+      summary: API to yield new ticket
+      operationId: postGenerateTicket
+      description: POST API which helps to create new movie ticket
+      parameters:
+      - in: body
+        name: body
+        description: find docs based on filter
+        schema:
+          type: object
+          required:
+            - customerName,theater
+          properties:
+            customerName:
+              type: string
+            performanceTitle:
+              type: string
+            ticketPrice:
+              type: number
+            performanceTime:
+              type: string
+            theater:
+              type: string
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /getalldocs:
+    get:
+      summary: API to return all docs in the collection
+      operationId: getGetalldocs
+      description: API to return all docs in the collection
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /get/summaryvisits:
+    get:
+      summary: 'API to return #customer in each month'
+      operationId: getGetSummaryvisits
+      description: 'API to return #customer in each month'
+      parameters:
+        - name: method
+          in: query
+          description: which decides the logic calcualation method
+          type: string
+          enum: 
+            - aggregation
+            - js
+          required: true
+        - name: toDate
+          in: query
+          description: to date
+          type: string
+          required: true
+        - name: fromDate
+          in: query
+          description: from date
+          type: string
+          required: true
+        - name: performanceTitle
+          in: query
+          description: movie name
+          type: string
+          required: true
+        - name: theater
+          in: query
+          description: theater name
+          type: string
+          required: true
+        
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /get/totalamount:
+    get:
+      summary: API to return total amount received in each month
+      operationId: getGetTotalamount
+      description: API to return total amount received in each month
+      parameters:
+        - name: method
+          in: query
+          description: which decides the logic calcualation method
+          type: string
+          enum: 
+            - aggregation
+            - js
+          required: true
+        - name: toDate
+          in: query
+          description: to date
+          type: string
+          required: true
+        - name: fromDate
+          in: query
+          description: from date
+          type: string
+          required: true
+        - name: performanceTitle
+          in: query
+          description: movie name
+          type: string
+          required: true
+        - name: theater
+          in: query
+          description: theater name
+          type: string
+          required: true
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /updatewithFilter:
+    put:
+      summary: update docs based on filter
+      operationId: putUpdatewithfilter
+      description: update docs based on filter
+      parameters:
+      - in: body
+        name: body
+        description: update docs based on filter
+        schema:
+          type: object
+          required:
+            - updateField,updateValue,customerName
+          properties:
+            customerName:
+              type: string
+            performanceTitle:
+              type: string
+            ticketPrice:
+              type: number
+            performanceTime:
+              type: string
+
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+definitions: {}
